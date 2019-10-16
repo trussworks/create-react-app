@@ -13,10 +13,16 @@ The _only_ changes in this fork are located in `/packages/react-scripts`. All ot
 
 ## Usage
 
-WIP - testing required
+The `create-react-app` CLI does not currently support installing custom react-scripts from Github repos. Until this has changed, _or_ we publish `truss-react-scripts` to npm, you will need to clone this repo in order to use it. Pass in the _relative_ file path to your local `react-scripts` directory when starting the project. Shortcuts (such as `~/repos/create-react-app/...`) won't work.
 
 ```
-create-react-app <appname> --scripts-version https://github.com/trussworks/create-react-app.git#truss-react-scripts
+create-react-app <appname> --scripts-version file:<relative_path_to_your_local_trussworks/create-react-app>/packages/react-scripts
+```
+
+Example:
+
+```
+create-react-app <appname> --scripts-version file:../create-react-app/packages/react-scripts
 ```
 
 ## Roadmap
@@ -26,6 +32,7 @@ create-react-app <appname> --scripts-version https://github.com/trussworks/creat
 - [ ] Include [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) for supporting SCSS module imports
 - [ ] Include [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker) so USWDS SCSS media queries work correctly
 - [ ] Add ability to extend Babel, ESLint, TSLint configs per-project (ala [rescripts](https://github.com/harrysolovay/rescripts))
+- [ ] Decide to publish `truss-react-scripts` or open PR to `create-react-app` to handle Github repo hosted script versions
 
 
 ***Do not edit below this line***
