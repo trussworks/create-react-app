@@ -1,3 +1,45 @@
+# @trussworks/create-react-app
+
+This is a custom implementation of [Create React App](https://create-react-app.dev/) that extends configuration for Truss projects.
+
+## Maintenance
+The _only_ changes in this fork are located in `/packages/react-scripts`. All other code should remain untouched, in order to easily pull in updates from the upstream [facebook/create-react-app](https://github.com/facebook/create-react-app).
+
+- The default branch for developing in this repo is `truss-react-scripts`.
+- The `master` branch is automatically kept up-to-date with `facebook/create-react-app:master` using [Pull](https://wei.github.io/pull/).
+- `truss-react-scripts` is branched off of the most recent stable version.
+- When a new stable version of `facebook/create-react-app` is released, `truss-react-scripts` should be rebased against it.
+- When opening a PR, make sure the base branch is _always_ set to `truss-react-scripts` (i.e., `https://github.com/trussworks/create-react-app/compare/truss-react-scripts...trussworks:<your branch name>`). The Github UI will default to opening it against `facebook/create-react-app:master`, so make sure to change it.
+- [Click here to manually trigger an upstream update to master](https://pull.git.ci/process/trussworks/create-react-app)
+
+## Usage
+
+The `create-react-app` CLI does not currently support installing custom react-scripts from Github repos. Until this has changed, _or_ we publish `truss-react-scripts` to npm, you will need to clone this repo in order to use it. Pass in the _relative_ file path to your local `react-scripts` directory when starting the project. Shortcuts (such as `~/repos/create-react-app/...`) won't work.
+
+```
+create-react-app <appname> --scripts-version file:<relative_path_to_your_local_trussworks/create-react-app>/packages/react-scripts
+```
+
+Example:
+
+```
+create-react-app <appname> --scripts-version file:../create-react-app/packages/react-scripts
+```
+
+## Roadmap
+
+- [ ] Option to include ReactUSWDS by default
+- [ ] Add default Babel, ESLint, TSLint configs (Truss opinionated)
+- [ ] Include [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) for supporting SCSS module imports
+- [ ] Include [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker) so USWDS SCSS media queries work correctly
+- [ ] Add ability to extend Babel, ESLint, TSLint configs per-project (ala [rescripts](https://github.com/harrysolovay/rescripts))
+- [ ] Decide to publish `truss-react-scripts` or open PR to `create-react-app` to handle Github repo hosted script versions
+
+
+***Do not edit below this line***
+
+---
+
 # Create React App [![Build Status](https://dev.azure.com/facebook/create-react-app/_apis/build/status/facebook.create-react-app?branchName=master)](https://dev.azure.com/facebook/create-react-app/_build/latest?definitionId=1&branchName=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
 
 Create React apps with no build configuration.
