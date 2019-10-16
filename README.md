@@ -9,6 +9,7 @@ The _only_ changes in this fork are located in `/packages/react-scripts`. All ot
 - The `master` branch is automatically kept up-to-date with `facebook/create-react-app:master` using [Pull](https://wei.github.io/pull/).
 - `truss-react-scripts` is branched off of the most recent stable version.
 - When a new stable version of `facebook/create-react-app` is released, `truss-react-scripts` should be rebased against it.
+- [Manually trigger upstream update](https://pull.git.ci/process/trussworks/create-react-app)
 
 ## Usage
 
