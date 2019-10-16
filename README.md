@@ -1,3 +1,36 @@
+# @trussworks/create-react-app
+
+This is a custom implementation of [Create React App](https://create-react-app.dev/) that extends configuration for Truss projects.
+
+## Maintenance
+The _only_ changes in this fork are located in `/packages/react-scripts`. All other code should remain untouched, in order to easily pull in updates from the upstream [facebook/create-react-app](https://github.com/facebook/create-react-app).
+
+- The default branch for developing in this repo is `truss-react-scripts`.
+- The `master` branch is automatically kept up-to-date with `facebook/create-react-app:master` using [Pull](https://wei.github.io/pull/).
+- `truss-react-scripts` is branched off of the most recent stable version.
+- When a new stable version of `facebook/create-react-app` is released, `truss-react-scripts` should be rebased against it.
+
+## Usage
+
+WIP - testing required
+
+```
+create-react-app <appname> --scripts-version https://github.com/trussworks/create-react-app.git#truss-react-scripts
+```
+
+## Roadmap
+
+- [ ] Option to include ReactUSWDS by default
+- [ ] Add default Babel, ESLint, TSLint configs (Truss opinionated)
+- [ ] Include [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) for supporting SCSS module imports
+- [ ] Include [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker) so USWDS SCSS media queries work correctly
+- [ ] Add ability to extend Babel, ESLint, TSLint configs per-project (ala [rescripts](https://github.com/harrysolovay/rescripts))
+
+
+***Do not edit below this line***
+
+---
+
 # Create React App [![Build Status](https://dev.azure.com/facebook/create-react-app/_apis/build/status/facebook.create-react-app?branchName=master)](https://dev.azure.com/facebook/create-react-app/_build/latest?definitionId=1&branchName=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
 
 Create React apps with no build configuration.
